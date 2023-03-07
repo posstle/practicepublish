@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>header</title>
-    <link rel="stylesheet" href="/index.css" />
+    <!-- <link rel="stylesheet" href="/index.css" /> -->
+    <link rel="stylesheet" href="/correct.css" />
     <script src="https://kit.fontawesome.com/3ee5db7d33.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar">
       <div class="nav-logo">
         <i class="fa-brands fa-accusoft"></i>&nbsp;
-        <a href="">Coding</a>
+        <a href="">DreamCoding</a>
       </div>
 
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="menu">
         <li><a href="">Home</a></li>
         <li><a href="">Gallery</a></li>
         <li><a href="">Weddings</a></li>
@@ -23,10 +27,27 @@
         <li><a href="">Bookings</a></li>
       </ul>
 
-      <ul class="nav-links">
+      <ul class="nav-links" id="links">
         <li><i class="fa-brands fa-twitter"></i></li>
         <li><i class="fa-brands fa-facebook-f"></i></li>
       </ul>
+
+      <a href="#" class="nav-toggle" id="toggle">
+        <i class="fa-solid fa-bars"></i>
+      </a>
     </nav>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', ()=> {
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.querySelector('.nav-menu');
+        const links = document.querySelector('.nav-links');
+
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('active');
+          links.classList.toggle('active');
+        });
+      });
+    </script>
   </body>
 </html>
